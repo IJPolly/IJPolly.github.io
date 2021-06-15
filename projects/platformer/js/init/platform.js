@@ -40,7 +40,7 @@
         createPlatform(720, 560, 0.5, 10);
 
         //little tiny glitch platform
-        createPlatform(800, 440, 0.25);
+        createPlatform(840, 440, 0.25);
 
         createPlatform(350, 460, 0.5);
 
