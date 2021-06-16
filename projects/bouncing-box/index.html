@@ -15,6 +15,12 @@
 			position: absolute;
 			top: 100px;
 			left: 0px;  /* <--- Change me! */
+			
+			/*I didn't like how you could select the text on the box, so I changed it*/
+			-webkit-user-select: none; /* Safari */        
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+			user-select: none; /* Standard */
 		}
 		.board{
 			height: 100vh;
@@ -61,8 +67,9 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
-
+			var x = 0;
+			var clicks = 0;
+			changeBoxText(0);
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -70,8 +77,12 @@
 			turn it around! 
 			*/
 			function update() {
-				
+				//852 is the right edge or boardWidth
+				x += 10;
+				moveBoxTo(x);
 
+				
+				
 			};
 
 			/* 
@@ -80,8 +91,9 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
-
+				x = 0;
+				clicks++;
+				changeBoxText(clicks);
 
 			};
 		})();
