@@ -33,7 +33,7 @@ var init = function (window) {
 
         // TODO 3 / 8 : Call the drawCircle() function 
 
-        for(let i = 0; i < 5; i++) {
+        for(let i = 0; i < 100; i++) {
             drawCircle();
         }
         ////////////////////////////////////////////////////////////
@@ -73,7 +73,21 @@ var init = function (window) {
             }
             
             // TODO 7 : YOUR CODE STARTS HERE //////////////////////
-            
+            if ( circle.x-circle.radius < 0) {
+                //check left
+                circle.x = canvas.width-circle.radius;
+            } else if ( circle.x+circle.radius > canvas.width ) {
+                //check right
+                circle.x = circle.radius;
+            }
+
+            if ( circle.y-circle.radius < 0) {
+                //check top
+                circle.y = canvas.height-circle.radius;
+            } else if ( circle.y+circle.radius > canvas.height) {
+                //check bottom
+                circle.y = circle.radius;
+            }
 
 
             // YOUR TODO 7 CODE ENDS HERE //////////////////////////
